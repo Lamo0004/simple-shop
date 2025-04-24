@@ -21,16 +21,12 @@ const Dropdown = ({ categories }) => {
 
       {isOpen && (
         <div className="absolute mt-2 w-48 rounded-md shadow-lg bg-white z-10">
-          <ul className="py-1">
-            {categories && categories.length > 0 ? (
-              categories.map((category, index) => (
-                <li key={index} onClick={() => setActiveCategory(category)} className="block px-4 py-2 text-gray-700 hover:bg-orange-400 hover:text-[#ededed] cursor-pointer transition duration-200 capitalize">
-                  {category.name}
-                </li>
-              ))
-            ) : (
-              <li className="block px-4 py-2 text-gray-700">No categories available</li>
-            )}
+          <ul>
+            {categories.map((category) => (
+              <li key={category.slug} onClick={() => setActiveCategory(category)} className="block px-4 py-2 text-gray-700 hover:bg-orange-400 hover:text-[#ededed] cursor-pointer transition duration-200 capitalize">
+                {category.name}
+              </li>
+            ))}
           </ul>
         </div>
       )}
