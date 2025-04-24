@@ -17,9 +17,9 @@ const Produkter = () => {
 
   // Hent kategorier
   useEffect(() => {
-    fetch('https://dummyjson.com/products/categories')
-      .then(res => res.json())
-      .then(data => {
+    fetch("https://dummyjson.com/products/categories")
+      .then((res) => res.json())
+      .then((data) => {
         console.log(data); // Tjek data-strukturen
         setCategories(data);
       });
