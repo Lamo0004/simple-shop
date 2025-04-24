@@ -13,7 +13,7 @@ const Dropdown = () => {
       <button
       //Når man klikker på knap, skifter isOpen mellem true og false, så dropdown-menuen vises/skjules.
         onClick={() => setIsOpen(!isOpen)}
-        className="bg-gray-200 text-gray-800 font-medium py-2 px-4 rounded-md hover:bg-orange-400 hover:text-[#ededed] transition duration-200"
+        className="flex items-center gap-2 bg-gray-200 text-gray-800 font-medium py-2 px-4 rounded-md hover:bg-orange-400 hover:text-[#ededed] transition duration-200"
       >
         Vælg kategori
         <IoIosArrowDown 
