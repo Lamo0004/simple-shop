@@ -12,7 +12,7 @@ const Price = () => {
         <h3>Total pris</h3>
         <h3>Pris DKK</h3>
       </div>
-      <ButtonNewSide title="GÅ TIL KASSEN" href="#"></ButtonNewSide>
+      <ButtonNewSide title="GÅ TIL KASSEN" href="#" ></ButtonNewSide>
     </div>
   );
 };
