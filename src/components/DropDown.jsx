@@ -31,6 +31,7 @@ const Dropdown = () => {
             {/* //En liste (ul) hvor hvert element (li) laves ved at loope over en array */}
             {["Produkt 1", "Produkt 2", "Produkt 3"].map((item) => (
               <li
+              //key={item}: Unik nøgle for Reacts rendering
                 key={item}
                 className="block px-4 py-2 text-gray-700 hover:bg-orange-400 hover:text-[#ededed] cursor-pointer transition duration-200"
               >
