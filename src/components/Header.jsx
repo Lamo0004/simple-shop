@@ -9,7 +9,7 @@ const Header = () => {
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-6">
         <div className="flex justify-between items-center w-full sm:w-auto">
           <div className="text-orange-400 text-3xl font-[Limelight] sm:hidden">
-            <Link href="#">LAM.DK</Link>
+            <Link href="/">LAM.DK</Link>
           </div>
           <div className="flex items-center gap-6">
             <li className="text-m hover:text-orange-400">
