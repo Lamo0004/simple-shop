@@ -17,7 +17,7 @@ const Produkter = () => {
     <section className="p-4">
       <Dropdown />
 
-      <div className="flex flex-col gap-4 mt-4 md:flex-row md:flex-wrap">
+      <div className="flex flex-col gap-4 mt-4 md:flex-row md:flex-wrap mx-auto max-w-screen-lg">
         {products.map((product) => (
           <Card key={product.id} product={product} />
         ))}
