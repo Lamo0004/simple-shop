@@ -7,11 +7,11 @@
 import { useState } from "react";
 import Image from "next/image";
 
-export default function ImageSlider({img}) {
+export default function ImageSlider({ img }) {
   const [mainImage, setMainImage] = useState(img[0]); // Viser det første billede som hovedbillede //
 
   return (
-    <div className="flex flex-col gap-6 m-4 md:items-end">
+    <div className="flex flex-col gap-6 m-4">
       {/* Det store billede */}
       <div className="w-full max-w-[500px] h-[350px] relative">
         <Image src={mainImage} alt="Hovedbillede" fill className="shadow-sm object-cover" />

@@ -5,7 +5,7 @@ import SearchBar from "./SearchBar";
 
 const Header = () => {
   return (
-    <nav className="px-4 py-2">
+    <nav className="py-2 mx-auto max-w-screen-lg">
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-6">
         <div className="flex justify-between items-center w-full sm:w-auto">
           {/* Logoet centreret på mobil */}
