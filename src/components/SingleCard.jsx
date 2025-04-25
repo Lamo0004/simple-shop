@@ -9,7 +9,7 @@ const SingleCard = ({ name, brand, description, price, images }) => {
           <Arrow />
       <div className="md:grid md:grid-cols-2">
         <div>
-          <ImageSlider />
+          <ImageSlider img={images} />
           {/* <Image src={images[0]} alt={name} className="w-full" /> Brug det første billede som cover image */}
         </div>
         <div className="flex flex-col justify-between">
