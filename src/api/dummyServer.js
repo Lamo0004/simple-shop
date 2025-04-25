@@ -4,7 +4,7 @@ export async function getProducts() {
       revalidate: 3600,
     },
   }).then((res) => res.json());
-  return products;
+  return products.products;
 }
 
 export async function getCategories() {
