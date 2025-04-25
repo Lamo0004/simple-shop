@@ -19,7 +19,7 @@ const SingleCard = ({ name, brand, description, price, images }) => {
             <p className="max-w-[50ch]">{description}</p>
           </div>
           <div>
-            <h3>Pris: {price} DKK</h3>
+            <h3>Pris: {price} $</h3>
             <Button className="bg-blue-500 text-white p-2 rounded">Læg i kurv</Button>
           </div>
         </div>
