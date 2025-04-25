@@ -1,15 +1,15 @@
 "use client";
-
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
-const Dropdown = ({ categories }) => {
+const Dropdown = ({ categories, setSelectedCategory }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isActive, setIsActive] = useState("");
 
-  const setActiveCategory = (cat) => {
-    setIsActive(cat); // korrekt brug af string
-    setIsOpen(false);
+  const setActiveCategory = (category) => {
+    setIsActive(category.name); // Kun gem navnet på den aktive kategori
+    setSelectedCategory(category.name); // Vælg kategori og send til forælderen
+    setIsOpen(false); // Luk dropdown efter valg
   };
 
   return (
