@@ -3,7 +3,7 @@ import Card from "./Card";
 
 const ListClient = ({ products }) => {
   return (
-    <div className="flex flex-col gap-4 mt-4 md:flex-row md:flex-wrap md:justify-center md:items-center">
+    <div className="flex flex-col gap-4 mt-4 md:flex-row md:flex-wrap justify-center items-center">
       {products.map((product) => (
         <Card key={product.id} product={product} />
       ))}
