@@ -16,11 +16,13 @@ const Price = () => {
         <p>Antal vare(r):</p>
         <p>{items.length}</p>
       </div>
-      <div className="flex justify-between">
+      <div className="flex justify-between mt-4">
         <h3>Total pris</h3>
         <h3>${getTotalPrice()}</h3>
       </div>
-      <ButtonNewSide title="GÅ TIL KASSEN" href="#"></ButtonNewSide>
+      <div className="my-4">
+        <ButtonNewSide title="GÅ TIL KASSEN" href="#"></ButtonNewSide>
+      </div>
     </div>
   );
 };
