@@ -14,7 +14,7 @@ const Produkter = () => {
       const categoriesData = await getCategories(); //henter alle kategorier
 
       // Maks produkter, så der er bedre performance
-      const limitedProducts = productsData.slice(0, 20);
+      const limitedProducts = productsData.slice(0, 40);
 
       // Find produkter med rabat
       const discountedProducts = limitedProducts.filter(p => p.discountPercentage > 0);
