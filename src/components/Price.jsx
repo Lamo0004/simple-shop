@@ -10,7 +10,8 @@ const Price = () => {
   };
 
   return (
-    <div>
+    <article className="max-w-full sticky bottom-0 bg-[#ededed] py-4">
+      <hr className="text-[#323232]"></hr>
       <h2>Pris i alt</h2>
       <div className="flex justify-between">
         <p>Antal vare(r):</p>
@@ -20,10 +21,10 @@ const Price = () => {
         <h3>Total pris</h3>
         <h3>${getTotalPrice()}</h3>
       </div>
-      <div className="my-4">
+      <div className="my-4 justify-self-end">
         <ButtonNewSide title="GÅ TIL KASSEN" href="#"></ButtonNewSide>
       </div>
-    </div>
+    </article>
   );
 };
 

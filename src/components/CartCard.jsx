@@ -20,18 +20,18 @@ const CartCard = ({ item }) => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row max-w-full gap-6 p-4 items-center rounded-md">
-      <div className="relative w-full h-48 md:w-32 md:h-32 shrink-0">
+    <div className="flex flex-row max-w-full gap-6 p-1 items-center rounded-md">
+      <div className="relative w-32 h-32">
         <Image src={item.thumbnail} alt={item.title} fill className="rounded-md object-cover" />
       </div>
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between w-full gap-4">
+      <div className="flex flex-row items-center justify-between w-full gap-4">
         <div className="flex flex-col justify-center">
-          <h3 className="text-lg font-semibold">{item.title}</h3>
+          <h4 className="text-lg font-semibold">{item.title}</h4>
           <p>${item.price}</p>
         </div>
 
         <div className="flex flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
+          <div className="flex items-center">
             <button className="text-2xl bg-transparent border-none outline-none hover:text-orange-400 transition cursor-pointer" onClick={handleDecrement}>
               −
             </button>

@@ -6,12 +6,14 @@ import CartIcon from "./CartIcon";
 const Header = () => {
   return (
     <div className="-mx-2 sticky top-0 z-50">
-      <nav className="py-2 w-full bg-[#ededed] shadow">
+      <nav className="p-2 w-full bg-[#ededed] shadow">
         <div className="mx-auto max-w-screen-lg flex flex-col sm:flex-row sm:justify-between sm:items-center gap-6">
           <div className="flex justify-between items-center w-full sm:w-auto">
             {/* Logoet centreret på mobil */}
             <div className="text-orange-400 text-3xl sm:hidden">
-              <Link className="font-logo" href="/">LAM.DK</Link>
+              <Link className="font-logo" href="/">
+                LAM.DK
+              </Link>
             </div>
             <div className="flex items-center gap-6">
               <li className="text-m hover:text-orange-400">
@@ -30,7 +32,9 @@ const Header = () => {
 
           {/* Logoet centreret på desktop */}
           <div className="hidden sm:block text-orange-400 text-3xl sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2">
-            <Link className="font-logo" href="/">LAM.DK</Link>
+            <Link className="font-logo" href="/">
+              LAM.DK
+            </Link>
           </div>
         </div>
       </nav>
