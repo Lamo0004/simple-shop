@@ -16,9 +16,8 @@ const Card = ({ product }) => {
           <p>${product.price}</p>
         </div>
       </Link>{" "}
-      {/* Slut Link komponenten */}
       <div className="mt-4 text-right">
-        <Button item={product}>Læg i kurv</Button> {/* Den funktionelle knap */}
+        <Button item={product}>Læg i kurv</Button>
       </div>
     </article>
   );
