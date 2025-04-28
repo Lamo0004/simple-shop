@@ -8,7 +8,7 @@
   --text-color: #323232;
 
   --step-0: clamp(1.125rem, 1.0815rem + 0.2174vw, 1.25rem);
-  --step-1: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem); /* Bruger vi ikke */
+  --step-1: clamp(1.35rem, 1.2761rem + 0.3696vw, 1.5625rem);
   --step-2: clamp(1.62rem, 1.5041rem + 0.5793vw, 1.9531rem);
   --step-3: clamp(1.944rem, 1.771rem + 0.8651vw, 2.4414rem);
   --step-4: clamp(2.3328rem, 2.0827rem + 1.2504vw, 3.0518rem);
