@@ -29,7 +29,7 @@ const Header = () => {
 
         {/* Logoet centreret på desktop */}
         <div className="hidden sm:block text-orange-400 text-3xl sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2">
-          <Link href="/">LAM.DK</Link>
+          <Link className="font-logo" href="/">LAM.DK</Link>
         </div>
       </div>
     </nav>
