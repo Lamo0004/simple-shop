@@ -11,7 +11,7 @@ const Card = ({ product }) => {
     <article className="relative justify-center w-full max-w-xs flex flex-col bg-white overflow-hidden text-center p-4 rounded shadow ">
       {/* Hvis produktet har rabat, vis badge */}
       {roundedDiscount > 0 && (
-        <div className="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
+        <div className="absolute top-2 left-2 z-10 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
           SALE
           <p className="">{roundedDiscount}%</p>
         </div>
