@@ -8,7 +8,7 @@ const Header = () => {
     <nav className="py-2 mx-auto max-w-screen-lg">
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-6">
         <div className="flex justify-between items-center w-full sm:w-auto">
-          {/* Logoet centreret på mobil */}
+          {/* Logoet på mobil */}
           <div className="text-orange-400 text-3xl font-[Limelight] sm:hidden">
             <Link href="/">LAM.DK</Link>
           </div>
