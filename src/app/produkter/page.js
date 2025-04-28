@@ -1,8 +1,8 @@
 "use client"; // Gør, at denne komponent køres som en client-side komponent i Next.js
- 
+
 import { useState, useEffect } from "react"; // Importer hooks fra React
 import { getProducts, getCategories } from "@/api/dummyServer"; //samlet de to da de er fra samme fil
-import ListClientWithFilter from "@/components/ListClientWithFilter"; //importere der hvor produkterne vises. 
+import ListClientWithFilter from "@/components/ListClientWithFilter"; //importere der hvor produkterne vises.
 
 const Produkter = () => {
   const [products, setProducts] = useState([]); // State til produkterne
@@ -16,25 +16,11 @@ const Produkter = () => {
       // Maks produkter, så der er bedre performance
       const limitedProducts = productsData.slice(0, 40);
 
-      // Find produkter med rabat
-      const discountedProducts = limitedProducts.filter(p => p.discountPercentage > 0);
+      // Sortér produkterne efter rabatprocenten (fra højeste til laveste)
+      const sortedProducts = [...limitedProducts].sort((a, b) => b.discountPercentage - a.discountPercentage);
 
-      // Sortér rabat-produkterne så dem med størst rabat kommer først
-      const sortedProducts = [...discountedProducts].sort((a, b) => b.discountPercentage - a.discountPercentage);
-
-      // Vælg de 6 produkter med højest rabat
-      const top6Discounted = sortedProducts.slice(0, 6);
-
-      // Find de resterende produkter, baseret på LIMITED data (resten af produkterne)
-      const remainingProducts = limitedProducts.filter(
-        p => !top6Discounted.some(tp => tp.id === p.id)
-      );
-
-      // Kombiner top6 + resten, så pladserne bliver udfyldt.
-      const finalProducts = [...top6Discounted, ...remainingProducts];
-
-            // Opdatér state med de sortede produkter og kategorier
-      setProducts(finalProducts);
+      // Opdatér state med de sortede produkter og kategorier
+      setProducts(sortedProducts);
       setCategories(categoriesData);
     };
 
@@ -49,5 +35,3 @@ const Produkter = () => {
 };
 
 export default Produkter;
-
-
