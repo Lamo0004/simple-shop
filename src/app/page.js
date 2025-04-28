@@ -6,7 +6,7 @@ import ButtonFrontpage from "@/components/ButtonFronpage";
 export default function Home() {
   return (
     <div className="-mx-2">
-      <div className="relative h-[88vh] sm:h-[94vh] overflow-hidden">
+      <div className="relative h-[88vh] sm:h-[92.5vh] overflow-hidden">
         <Image src={frontPage} alt="Forside billede" quality={100} className="object-cover" layout="fill" />
         <div className="absolute bottom-20 left-5 sm:left-20 lg:left-50 p-4">
           <div>
