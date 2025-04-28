@@ -9,7 +9,7 @@ const Header = () => {
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-6">
         <div className="flex justify-between items-center w-full sm:w-auto">
           {/* Logoet centreret på mobil */}
-          <div className="text-orange-400 text-3xl font-[Limelight] sm:hidden">
+          <div className="text-orange-400 text-3xl sm:hidden font-logo">
             <Link href="/">LAM.DK</Link>
           </div>
           <div className="flex items-center gap-6">
@@ -28,7 +28,7 @@ const Header = () => {
         </div>
 
         {/* Logoet centreret på desktop */}
-        <div className="hidden sm:block text-orange-400 text-3xl font-[Limelight] sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2">
+        <div className="font-logo hidden sm:block text-orange-400 text-3xl sm:absolute sm:left-1/2 sm:transform sm:-translate-x-1/2">
           <Link href="/">LAM.DK</Link>
         </div>
       </div>
