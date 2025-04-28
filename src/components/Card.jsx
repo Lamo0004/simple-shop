@@ -6,7 +6,7 @@ const Card = ({ product }) => {
   const roundedDiscount = product.discountPercentage > 0 ? Math.round(product.discountPercentage) : 0;
 
   return (
-    <article className="flex flex-col w-full max-w-xs bg-white text-center p-4 rounded shadow">
+    <article className="flex flex-col justify-between w-72 h-[450px] bg-white text-center p-4 rounded shadow">
 
       {/* Rabat-badge */}
       {roundedDiscount > 0 && (
