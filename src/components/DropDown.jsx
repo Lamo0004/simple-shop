@@ -1,10 +1,11 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
 const Dropdown = ({ categories, setSelectedCategory }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isActive, setIsActive] = useState("");
+  const dropdownRef = useRef(null); //Her oprettes der en ny refference (ref)
 
   const setActiveCategory = (category) => {
     setIsActive(category.name); // Kun gem navnet på den aktive kategori
@@ -12,8 +13,22 @@ const Dropdown = ({ categories, setSelectedCategory }) => {
     setIsOpen(false); // Luk dropdown efter valg
   };
 
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsOpen(false); // Lukker dropdown menuen hvis der klikket udenfor den
+      }
+    };
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+  }, [isOpen]);
+
   return (
-    <div className="relative inline-block text-left">
+    <div ref={dropdownRef} className="relative inline-block text-left">
       <button onClick={() => setIsOpen(!isOpen)} className="flex items-center gap-2 bg-gray-200 text-gray-800 font-medium py-2 px-4 rounded-md hover:bg-orange-400 hover:text-[#ededed] transition duration-200">
         {isActive || "Vælg kategori"}
         <IoIosArrowDown className={`transform transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
