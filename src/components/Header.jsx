@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
-import { HiOutlineShoppingBag } from "react-icons/hi2";
 import SearchBar from "./SearchBar";
+import CartIcon from "./CartIcon";
 
 const Header = () => {
   return (
@@ -18,7 +18,7 @@ const Header = () => {
             </li>
             <li className="hover:text-orange-400">
               <Link href="/kurv">
-                <HiOutlineShoppingBag size={30} />
+                <CartIcon> </CartIcon>
               </Link>
             </li>
           </div>

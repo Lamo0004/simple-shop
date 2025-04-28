@@ -7,20 +7,15 @@ const Card = ({ product }) => {
   // Runder rabatprocenten op eller ned baseret på dens værdi
   const roundedDiscount = product.discountPercentage > 0 ? Math.round(product.discountPercentage) : 0;
 
-
   return (
-    
-    
     <article className="relative justify-center w-full max-w-xs flex flex-col bg-white overflow-hidden text-center p-4 rounded shadow ">
-{/* Hvis produktet har rabat, vis badge */}
-{roundedDiscount > 0 && (
-          <div className="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
+      {/* Hvis produktet har rabat, vis badge */}
+      {roundedDiscount > 0 && (
+        <div className="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">
           SALE
           <p className="">{roundedDiscount}%</p>
-
         </div>
       )}
-
       <Link href={`/produkt/${product.id}`}>
         <div className="w-full aspect-[5/3] relative mb-4 overflow-hidden rounded-md">
           <Image src={product.thumbnail} alt={product.title} fill className="object-cover rounded-md" />
@@ -32,11 +27,12 @@ const Card = ({ product }) => {
         </div>
       </Link>{" "}
       {/* Slut Link komponenten */}
-
-      <div className="mt-12 relative"> {/* Ændret fra absolute til relative */}
-      <div className="absolute bottom-4 right-4">
-        <Button item={product}>Læg i kurv</Button> {/* Den funktionelle knap */}
-      </div>
+      <div className="mt-12 relative">
+        {" "}
+        {/* Ændret fra absolute til relative */}
+        <div className="absolute bottom-4 right-4">
+          <Button item={product}>Læg i kurv</Button> {/* Den funktionelle knap */}
+        </div>
       </div>
     </article>
   );
