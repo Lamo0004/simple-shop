@@ -17,6 +17,7 @@ const ListClientWithFilter = ({ products, categories }) => {
     <div className="mx-auto max-w-screen-lg mt-4">
       <Dropdown categories={categories} setSelectedCategory={setSelectedCategory} />
       <ListClient products={filteredProducts} />
+      
     </div>
   );
 };
