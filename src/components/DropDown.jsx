@@ -40,6 +40,19 @@ const Dropdown = ({ categories, setSelectedCategory }) => {
       {isOpen && (
         <div className="absolute mt-2 w-48 rounded-md shadow-lg bg-white z-20 max-h-[500px] overflow-scroll">
           <ul>
+          <li
+        onClick={() => {
+          setIsActive("Alle Produkter"); // Fjerner aktiv kategori
+          setSelectedCategory(""); // Sender tom kategori til forælder
+          setIsOpen(false);
+          router.push("/produkter"); // Eller router.push("?category=alle") hvis I bruger sådan en struktur
+        }}
+        className="block px-4 py-2 text-gray-700 hover:bg-orange-400 hover:text-[#ededed] cursor-pointer transition duration-200"
+      >
+        Alle Produkter
+      </li>
+
+
             {categories.map((category) => (
               <li key={category.slug} onClick={() => setActiveCategory(category)} className="block px-4 py-2 text-gray-700 hover:bg-orange-400 hover:text-[#ededed] cursor-pointer transition duration-200 capitalize">
                 {category.name}
