@@ -9,7 +9,7 @@ const ListClientWithFilter = ({ products, categories }) => {
   console.log("filtreret produkter før filtrering", products);
 
   // Filtrér produkter baseret på den valgte kategori
-  const filteredProducts = selectedCategory ? products.filter((product) => String(product.category).toLowerCase() === String(selectedCategory).toLowerCase()) : products; //Vi bruger toLowerCase fordi produkternes kategori står med små bogstaver i API'et, men på vores side står de med store. Så for at denne linje virker, skal det være helt ens.
+  const filteredProducts = selectedCategory ? products.filter((product) => product.category === String(selectedCategory).toLowerCase().replaceAll(" ", "-")) : products; //Den valgte kategori skal matche med kategoriens syntaks i API'et. Derfor bruges toLowerCase og mellemrum skiftes ud med -
 
   console.log("filtreret produkter", filteredProducts);
 
@@ -17,7 +17,6 @@ const ListClientWithFilter = ({ products, categories }) => {
     <div className="mx-auto max-w-screen-lg mt-4">
       <Dropdown categories={categories} setSelectedCategory={setSelectedCategory} />
       <ListClient products={filteredProducts} />
-      
     </div>
   );
 };

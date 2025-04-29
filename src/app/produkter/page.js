@@ -14,7 +14,7 @@ const Produkter = () => {
       const categoriesData = await getCategories(); //henter alle kategorier
 
       // Maks produkter, så der er bedre performance
-      const limitedProducts = productsData.slice(0, 40);
+      const limitedProducts = productsData.slice(0, 200);
 
       // Sortér produkterne efter rabatprocenten (fra højeste til laveste)
       const sortedProducts = [...limitedProducts].sort((a, b) => b.discountPercentage - a.discountPercentage);
