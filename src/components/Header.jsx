@@ -2,8 +2,12 @@
 import Link from "next/link";
 import SearchBar from "./SearchBar";
 import CartIcon from "./CartIcon";
+import { useRouter } from "next/navigation";
 
 const Header = () => {
+
+  const router = useRouter();
+
   return (
     <div className="-mx-2 sticky top-0 z-50">
       <nav className="p-2 w-full bg-[#ededed] shadow">
@@ -17,7 +21,8 @@ const Header = () => {
             </div>
             <div className="flex items-center gap-6">
               <li className="text-m hover:text-orange-400">
-                <Link href="/produkter">SHOP</Link>
+                <button onClick={() => router.push("/produkter")}>SHOP</button>
+                {/* <Link replace={true} href="/produkter">SHOP</Link> */}
               </li>
               <li className="hover:text-orange-400">
                 <Link href="/kurv">
