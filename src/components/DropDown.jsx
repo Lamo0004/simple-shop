@@ -30,7 +30,7 @@ const Dropdown = ({ categories, activeCat }) => {
 
   return (
     <div ref={dropdownRef} className="relative inline-block text-left">
-      <button onClick={() => setIsOpen(!isOpen)} className="flex items-center gap-2 bg-gray-200 text-gray-800 font-medium py-2 px-4 rounded-md hover:bg-orange-400 hover:text-[#ededed] transition duration-200">
+      <button onClick={() => setIsOpen(!isOpen)} className="flex items-center gap-2 bg-gray-200 text-gray-800 font-medium py-2 px-4 rounded-md cursor-pointer hover:bg-orange-400 hover:text-[#ededed] transition duration-200">
         {selectedCategory}
         <IoIosArrowDown className={`transform transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`} />
       </button>
