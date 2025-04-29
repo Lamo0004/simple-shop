@@ -8,7 +8,7 @@ const Dropdown = ({ categories, activeCat }) => {
   const dropdownRef = useRef(null); //Her oprettes der en ny refference (ref)
   const router = useRouter();
 
-  const selectedCategory = activeCat ? categories.find(cat => cat.slug === activeCat).name : "Vælg kategori"
+  const selectedCategory = activeCat ? categories.find((cat) => cat.slug === activeCat).name : "Choose category";
 
   const setActiveCategory = (category) => {
     setIsOpen(false); // Luk dropdown efter valg
@@ -46,9 +46,8 @@ const Dropdown = ({ categories, activeCat }) => {
               }}
               className="block px-4 py-2 text-gray-700 hover:bg-orange-400 hover:text-[#ededed] cursor-pointer transition duration-200"
             >
-              Alle Produkter
+              All products
             </li>
-
 
             {categories.map((category) => (
               <li key={category.slug} onClick={() => setActiveCategory(category)} className="block px-4 py-2 text-gray-700 hover:bg-orange-400 hover:text-[#ededed] cursor-pointer transition duration-200 capitalize">
