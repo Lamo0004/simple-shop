@@ -12,7 +12,7 @@ const lato = Lato({
 const limelight = Limelight({
   variable: "--font-lime-light",
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400"],
 });
 
 export default function RootLayout({ children }) {
