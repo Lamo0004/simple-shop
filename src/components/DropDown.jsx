@@ -1,4 +1,5 @@
 "use client";
+import { useRouter } from "next/navigation";
 import { useState, useEffect, useRef } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
@@ -6,11 +7,14 @@ const Dropdown = ({ categories, setSelectedCategory }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isActive, setIsActive] = useState("");
   const dropdownRef = useRef(null); //Her oprettes der en ny refference (ref)
+  const router = useRouter();
+
 
   const setActiveCategory = (category) => {
     setIsActive(category.name); // Kun gem navnet på den aktive kategori
     setSelectedCategory(category.name); // Vælg kategori og send til forælderen
     setIsOpen(false); // Luk dropdown efter valg
+    router.push("?category=" + category.name); // Opdater URL
   };
 
   useEffect(() => {
