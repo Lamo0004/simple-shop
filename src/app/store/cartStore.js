@@ -1,22 +1,40 @@
-import { create } from "zustand"; // Funktion importeres – opretter en store
-import { persist } from "zustand/middleware"; // Funktion importeres – gør at state (messages) kan blive gemt i browserens lokale lagring
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 const cartStore = create(
   persist(
     (set) => ({
-      // Vores tomme array
       items: [],
 
-      // Tilføjer et item til arrayet
-      addItem: (item) => set((state) => ({ items: state.items.concat(item) })),
+      addItem: (item) =>
+        set((state) => {
+          // Tjek om produktet allerede er i kurven
+          const existingItem = state.items.find((i) => i.id === item.id);
 
-      // Fjerner et item baseret på en given betingelse
+          if (existingItem) {
+            // Hvis produktet findes, opdater antallet
+            return {
+              items: state.items.map((i) => (i.id === item.id ? { ...i, quantity: i.quantity + 1 } : i)),
+            };
+          } else {
+            // Hvis produktet ikke findes, tilføj det til kurven
+            return {
+              items: state.items.concat({ ...item, quantity: 1 }),
+            };
+          }
+        }),
+
       removeItem: (itemToRemove) =>
         set((state) => ({
-          items: state.items.filter((item) => item.id !== itemToRemove.id), //Vi bruger .filter() for at lave et nyt array, hvor vi kun beholder de produkter, hvis id ikke matcher itemToRemove.id. Dette fjerner det specifikke item fra items-arrayet.
+          items: state.items.filter((item) => item.id !== itemToRemove.id),
+        })),
+
+      updateItemQuantity: (id, newQuantity) =>
+        set((state) => ({
+          items: state.items.map((item) => (item.id === id ? { ...item, quantity: newQuantity } : item)),
         })),
     }),
-    { name: "storage" } // Angiver lokal lagringens navn
+    { name: "storage" }
   )
 );
 

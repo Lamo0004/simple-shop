@@ -6,17 +6,16 @@ import { RxCross2 } from "react-icons/rx";
 import useCartStore from "@/app/store/cartStore";
 
 const CartCard = ({ item }) => {
-  const [quantity, setQuantity] = useState(0);
-  const { removeItem } = useCartStore((state) => state);
+  const { removeItem, updateItemQuantity } = useCartStore((state) => state);
 
   const handleDecrement = () => {
-    if (quantity > 0) {
-      setQuantity(quantity - 1);
+    if (item.quantity > 1) {
+      updateItemQuantity(item.id, item.quantity - 1);
     }
   };
 
   const handleIncrement = () => {
-    setQuantity(quantity + 1);
+    updateItemQuantity(item.id, item.quantity + 1);
   };
 
   return (
@@ -35,7 +34,10 @@ const CartCard = ({ item }) => {
             <button className="text-2xl bg-transparent border-none outline-none hover:text-orange-400 transition cursor-pointer" onClick={handleDecrement}>
               −
             </button>
-            <input type="text" value={quantity} readOnly className="w-10 text-center text-lg bg-transparent border-none outline-none" />
+
+            {/* Opdateret input for quantity */}
+            <input type="text" value={item.quantity ?? 0} readOnly className="w-10 text-center text-lg bg-transparent border-none outline-none" />
+
             <button className="text-2xl bg-transparent border-none outline-none hover:text-orange-400 transition cursor-pointer" onClick={handleIncrement}>
               +
             </button>
