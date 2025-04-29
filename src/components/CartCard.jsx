@@ -8,13 +8,18 @@ import useCartStore from "@/app/store/cartStore";
 const CartCard = ({ item }) => {
   const { removeItem, updateItemQuantity } = useCartStore((state) => state);
 
+  //Funktion kaldes ved klik på minus
   const handleDecrement = () => {
+    //Tjekker om quantity er større end 1 – så den ALDRIG går ned på 0 eller negative tal.
+    // Hvis betingelsen er opfyldt reduceres mængden med 1
     if (item.quantity > 1) {
       updateItemQuantity(item.id, item.quantity - 1);
     }
   };
 
+  //Funktion kaldes ved klik på plus
   const handleIncrement = () => {
+    //Øger quantity med 1
     updateItemQuantity(item.id, item.quantity + 1);
   };
 
@@ -34,10 +39,7 @@ const CartCard = ({ item }) => {
             <button className="text-2xl bg-transparent border-none outline-none hover:text-orange-400 transition cursor-pointer" onClick={handleDecrement}>
               −
             </button>
-
-            {/* Opdateret input for quantity */}
-            <input type="text" value={item.quantity ?? 0} readOnly className="w-10 text-center text-lg bg-transparent border-none outline-none" />
-
+            <input type="text" value={item.quantity} readOnly className="w-10 text-center text-lg bg-transparent border-none outline-none" /> {/* readOnly sikrer, at brugeren ikke kan skrive direkte i feltet – det skal styres via plus/minus-knapperne. */}
             <button className="text-2xl bg-transparent border-none outline-none hover:text-orange-400 transition cursor-pointer" onClick={handleIncrement}>
               +
             </button>

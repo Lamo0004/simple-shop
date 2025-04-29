@@ -3,32 +3,26 @@ import Button from "./Button";
 import Arrow from "./Arrow";
 
 const SingleCard = ({ title, brand, description, price, images, discountPercentage }) => {
-
   const roundedDiscount = discountPercentage > 0 ? Math.round(discountPercentage) : 0;
 
   return (
     <article className="mx-auto max-w-screen-lg mt-4">
-      
-      
-
       <Arrow href="/produkter" />
       <div className="md:grid md:grid-cols-2">
         <div>
           <ImageSlider img={images} />
         </div>
-        
+
         <div className="flex flex-col">
           {/* Hvis produktet har rabat, vis badge */}
           {roundedDiscount > 0 && (
             <div className="flex items-center space-x-2 justify-between">
-                          <h3 className="font-semibold">{brand}</h3>
+              <h3 className="font-semibold">{brand}</h3>
 
               <div className="flex">
-              <div className=" bg-red-500 text-white text-xs font-bold px-2 py-1 rounded mr-2">
-                SALE
+                <div className=" bg-red-500 text-white text-xs font-bold px-2 py-1 rounded mr-2">SALE</div>
+                <div className=" flex text-xs text-red-500 font-bold items-center">{roundedDiscount}%</div>
               </div>
-              <div className=" flex text-xs text-red-500 font-bold items-center">{roundedDiscount}%</div>
-            </div>
             </div>
           )}
           <div>
@@ -37,7 +31,7 @@ const SingleCard = ({ title, brand, description, price, images, discountPercenta
           </div>
           <div className="pb-2">
             <h3>Pris: {price} $</h3>
-            <Button>Læg i kurv</Button>
+            <Button>Add To Basket</Button>
           </div>
         </div>
       </div>
